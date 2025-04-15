@@ -1,7 +1,7 @@
 ## Switch to root user
 
 ```
-sudo pwd root 
+sudo passwd root 
 ```
 The root user of give new password.
 
@@ -30,3 +30,12 @@ caja --force-desktop
 
 > Step 2 - Add startup program. (Do like here)
 ![alt text](img/addprogram.png)
+
+### Delete user
+```
+userdel -r -f username
+```
+
+<table border="1">
+<tr><td>-r : remove</td><td>-f : force</td></tr>
+</table>
