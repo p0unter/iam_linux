@@ -1,1 +1,2 @@
 for i in $(find files); do ./decrypt.sh $i | grep pico; done
+sudo grep -rnia "picoCTF" /mnt/dd_image
