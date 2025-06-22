@@ -1,4 +1,8 @@
-# iam_linux
+<a href="https://github.com/p0unter">
+    <img src="https://github.com/user-attachments/assets/184bda27-4357-43bf-81c3-b536cf9dd890" alt="Github Inside" title="Github Inside" align="right" height="200" />
+</a>
+
+# I am Linux
 
 Welcome to **iam_linux**! This repository is dedicated to sharing my Linux configuration files, scripts, and personal experiences with the Linux operating system. Whether you are a beginner or an experienced user, I hope you find these resources helpful for customizing and optimizing your Linux environment.
 
