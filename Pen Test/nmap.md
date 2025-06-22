@@ -1,0 +1,1 @@
+nmap -sS -sV -p 445 --script vuln 10.10.10.11 -vv
