@@ -1,3 +1,4 @@
+```
 "example search key"
 site:exapledomain.com [key]
 "[key]" site:exapledomain.com + "[key]"
@@ -18,3 +19,4 @@ allintext:"*@gmail.com" OR "password" filetype:xlsx
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 Recomended doring search result website: exploit-db.com
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```

@@ -1,3 +1,4 @@
+```
 git clone https://github.com/Und3rfl0w/kali-anonsurf.git
 cd kali-anonsurf
 ./installer.sh
@@ -11,3 +12,4 @@ anonsurf start
 iptable -L
 
 anonsurf stop
+```

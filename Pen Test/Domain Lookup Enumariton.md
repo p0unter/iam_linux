@@ -1,3 +1,4 @@
+```
 - - - - - - - - - - - - - - - - - - - - -
 Website: centralops.net
 - - - - - - - - - - - - - - - - - - - - -
@@ -16,3 +17,4 @@ dig -t mx domain.com
 dig -t mx domain.com + short
 
 dnsrecon -d domain.com 
+```

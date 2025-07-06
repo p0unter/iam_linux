@@ -1,6 +1,21 @@
+```
 - - - - - - - - - - - - - - - - - - - - -
 Website: shodan.io
 - - - - - - - - - - - - - - - - - - - - -
+Examples:
+port:3389 - RDP
+"webcamxp 5" port:8080
+ssl:"xerox generic root"
+
+RDP Connect (rdesktop Using):
+rdesktop -k en 192.168.1.1
+
+CLI Using:
+
+    shodan init [APIkey]
+    shodan search "device:webcam" "port:80"
+    shodan search --fields ip_str,port,org "device:webcam"
+    
 General:
 
     all
@@ -114,17 +129,4 @@ SSH:
 
     ssh.hassh
     ssh.type
-
-Examples:
-port:3389 - RDP
-"webcamxp 5" port:8080
-ssl:"xerox generic root"
-
-RDP Connect (rdesktop Using):
-rdesktop -k en 192.168.1.1
-
-CLI Using:
-
-    shodan init [APIkey]
-    shodan search "device:webcam" "port:80"
-    shodan search --fields ip_str,port,org "device:webcam"
+```
