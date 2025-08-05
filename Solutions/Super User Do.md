@@ -26,10 +26,10 @@ caja --force-desktop
 
 **Permanent Method** <br>
 > Step 1 - Open startup applications.
-![alt text](img/startupapps.png)
+![alt text](../img/startupapps.png)
 
 > Step 2 - Add startup program. (Do like here)
-![alt text](img/addprogram.png)
+![alt text](../img/addprogram.png)
 
 ### Delete user
 ```
