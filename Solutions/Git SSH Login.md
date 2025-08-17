@@ -19,3 +19,8 @@ git remote set-url origin git@github.com:p0unter/iam_linux.git
 ```bash
 ssh -T git@github.com
 ```
+
+> Permanent
+```bash
+git config --global credential.helper store
+```
