@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         YouTube Customizer (Memory Safe)
 // @namespace    http://tampermonkey.net/
-// @version      1.8
-// @description  Removes elements + animated glow with enhanced hover
+// @version      2.1
+// @description  Removes elements + animated glow + voice search
 // @author       Popo
 // @match        https://www.youtube.com/*
 // @match        https://youtube.com/*
@@ -26,23 +26,34 @@
         }
     }
 
+    function removeVoiceSearch() {
+        const element = document.getElementById('voice-search-button');
+        if (element && !element.dataset.removed) {
+            element.dataset.removed = 'true';
+            element.remove();
+            console.log('Voice search button removed');
+        }
+    }
+
     function changeLogoContent() {
         const logo = document.getElementById('logo');
         if (logo && !logo.dataset.modified) {
             logo.dataset.modified = 'true';
             logo.innerHTML = `<a href="/">
-                <div id="chip-shape-container" class="style-scope yt-chip-cloud-chip-renderer glow-container">
-                    <chip-shape class="ytChipShapeHost">
-                        <button class="ytChipShapeButtonReset glow-chip" role="tab" aria-selected="false">
-                            <div class="ytChipShapeChip ytChipShapeInactive ytChipShapeOnlyTextPadding" style="background: none !important;">
-                                <div>Ultimate Mega Bic Mac Premium</div>
-                            </div>
-                        </button>
-                    </chip-shape>
+                <div id="glow-container" class="glow-container">
+                    <div id="chip-shape-container" class="style-scope yt-chip-cloud-chip-renderer">
+                        <chip-shape class="ytChipShapeHost">
+                            <button class="ytChipShapeButtonReset glow-chip" role="tab" aria-selected="false">
+                                <div class="ytChipShapeChip ytChipShapeInactive ytChipShapeOnlyTextPadding" style="background: none !important;">
+                                    <div>Ultimate Mega Bic Mac Premium</div>
+                                </div>
+                            </button>
+                        </chip-shape>
+                    </div>
                 </div>
             </a>`;
             addGlowEffect();
-            console.log('Logo changed with enhanced glow');
+            console.log('Logo changed with glow');
         }
     }
 
@@ -108,6 +119,7 @@
         lastRun = now;
 
         removeCountryCode();
+        removeVoiceSearch();
         changeLogoContent();
         removeButtonText();
     }
