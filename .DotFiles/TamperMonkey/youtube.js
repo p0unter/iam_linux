@@ -17,14 +17,14 @@
     let lastRun = 0;
     const INTERVAL = 1500;
 
-    function removeCountryCode() {
-        const element = document.getElementById('country-code');
-        if (element && !element.dataset.removed) {
-            element.dataset.removed = 'true';
-            element.remove();
-            console.log('Country code removed');
-        }
-    }
+    // function removeCountryCode() {
+    //     const element = document.getElementById('country-code');
+    //     if (element && !element.dataset.removed) {
+    //         element.dataset.removed = 'true';
+    //         element.remove();
+    //         console.log('Country code removed');
+    //     }
+    // }
 
     function removeVoiceSearch() {
         const element = document.getElementById('voice-search-button');
@@ -94,7 +94,7 @@
     }
 
     function removeButtonText() {
-        const buttons = document.querySelectorAll('.yt-spec-button-shape-next__button-text-content');
+        const buttons = document.querySelectorAll('#end #buttons .style-scope .yt-spec-button-shape-next__button-text-content');
         buttons.forEach(button => {
             if (!button.dataset.removed) {
                 button.dataset.removed = 'true';
@@ -118,7 +118,7 @@
         if (now - lastRun < INTERVAL) return;
         lastRun = now;
 
-        removeCountryCode();
+        // removeCountryCode();
         removeVoiceSearch();
         changeLogoContent();
         removeButtonText();
