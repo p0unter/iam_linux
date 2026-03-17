@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         YouTube Customizer (Memory Safe)
 // @namespace    http://tampermonkey.net/
-// @version      1.4
-// @description  Removes elements and customizes YouTube safely
+// @version      1.8
+// @description  Removes elements + animated glow with enhanced hover
 // @author       Popo
 // @match        https://www.youtube.com/*
 // @match        https://youtube.com/*
@@ -31,15 +31,55 @@
         if (logo && !logo.dataset.modified) {
             logo.dataset.modified = 'true';
             logo.innerHTML = `<a href="/">
-            <div id="chip-shape-container" class="style-scope yt-chip-cloud-chip-renderer">
-            <chip-shape class="ytChipShapeHost">
-            <button class="ytChipShapeButtonReset" role="tab" aria-selected="false">
-            <div class="ytChipShapeChip ytChipShapeInactive ytChipShapeOnlyTextPadding">
-            <div>Ultimate Mega Bic Mac Premium</div>
-            <yt-touch-feedback-shape aria-hidden="true" class="yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response"><div class="yt-spec-touch-feedback-shape__stroke" style="border-radius: 8px;"></div><div class="yt-spec-touch-feedback-shape__fill" style="border-radius: 8px;"></div></yt-touch-feedback-shape></div></button></chip-shape>
-</div></a>`;
-            console.log('Logo #logo changed to Home');
+                <div id="chip-shape-container" class="style-scope yt-chip-cloud-chip-renderer glow-container">
+                    <chip-shape class="ytChipShapeHost">
+                        <button class="ytChipShapeButtonReset glow-chip" role="tab" aria-selected="false">
+                            <div class="ytChipShapeChip ytChipShapeInactive ytChipShapeOnlyTextPadding" style="background: none !important;">
+                                <div>Ultimate Mega Bic Mac Premium</div>
+                            </div>
+                        </button>
+                    </chip-shape>
+                </div>
+            </a>`;
+            addGlowEffect();
+            console.log('Logo changed with enhanced glow');
         }
+    }
+
+    function addGlowEffect() {
+        if (document.getElementById('glow-styles')) return;
+
+        const style = document.createElement('style');
+        style.id = 'glow-styles';
+        style.textContent = `
+            .glow-container {
+                filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+                animation: glowMove 3s ease-in-out infinite;
+                transition: filter 0.3s ease;
+            }
+
+            .glow-container:hover {
+                filter: drop-shadow(0 0 7px rgba(255,255,255,1)) drop-shadow(0 0 30px rgba(255,100,255,0.5)) !important;
+                animation-play-state: paused;
+            }
+
+            .glow-chip {
+                transition: filter 0.3s ease;
+            }
+
+            @keyframes glowMove {
+                0%, 100% {
+                    filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+                }
+                25% {
+                    filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));
+                }
+                75% {
+                    filter: drop-shadow(0 0 10px rgba(255,100,255,0.6));
+                }
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     function removeButtonText() {
@@ -73,7 +113,6 @@
     }
 
     checkChanges();
-
     const intervalId = setInterval(checkChanges, INTERVAL);
 
     window.addEventListener('beforeunload', () => {
