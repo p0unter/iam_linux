@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Customizer (Memory Safe)
 // @namespace    http://tampermonkey.net/
-// @version      2.1
+// @version      2.4
 // @description  Removes elements + animated glow + voice search
 // @author       Popo
 // @match        https://www.youtube.com/*
@@ -17,15 +17,6 @@
     let lastRun = 0;
     const INTERVAL = 1500;
 
-    // function removeCountryCode() {
-    //     const element = document.getElementById('country-code');
-    //     if (element && !element.dataset.removed) {
-    //         element.dataset.removed = 'true';
-    //         element.remove();
-    //         console.log('Country code removed');
-    //     }
-    // }
-
     function removeVoiceSearch() {
         const element = document.getElementById('voice-search-button');
         if (element && !element.dataset.removed) {
@@ -36,22 +27,20 @@
     }
 
     function changeLogoContent() {
-        const logo = document.getElementById('logo');
+        const logo = document.querySelector('ytd-topbar-logo-renderer #logo.yt-simple-endpoint');
         if (logo && !logo.dataset.modified) {
             logo.dataset.modified = 'true';
-            logo.innerHTML = `<a href="/">
-                <div id="glow-container" class="glow-container">
-                    <div id="chip-shape-container" class="style-scope yt-chip-cloud-chip-renderer">
-                        <chip-shape class="ytChipShapeHost">
-                            <button class="ytChipShapeButtonReset glow-chip" role="tab" aria-selected="false">
-                                <div class="ytChipShapeChip ytChipShapeInactive ytChipShapeOnlyTextPadding" style="background: none !important;">
-                                    <div>Ultimate Mega Bic Mac Premium</div>
-                                </div>
-                            </button>
-                        </chip-shape>
-                    </div>
+            logo.innerHTML = `<div id="glow-container" class="glow-container">
+                <div id="chip-shape-container" class="style-scope yt-chip-cloud-chip-renderer">
+                    <chip-shape class="ytChipShapeHost">
+                        <button class="ytChipShapeButtonReset glow-chip" role="tab" aria-selected="false">
+                            <div class="ytChipShapeChip ytChipShapeInactive ytChipShapeOnlyTextPadding" style="background: none !important;">
+                                <div>Ultimate Premium</div>
+                            </div>
+                        </button>
+                    </chip-shape>
                 </div>
-            </a>`;
+            </div>`;
             addGlowEffect();
             console.log('Logo changed with glow');
         }
@@ -94,7 +83,7 @@
     }
 
     function removeButtonText() {
-        const buttons = document.querySelectorAll('#end #buttons .style-scope .yt-spec-button-shape-next__button-text-content');
+        const buttons = document.querySelectorAll('.yt-spec-button-shape-next__button-text-content');
         buttons.forEach(button => {
             if (!button.dataset.removed) {
                 button.dataset.removed = 'true';
@@ -118,7 +107,6 @@
         if (now - lastRun < INTERVAL) return;
         lastRun = now;
 
-        // removeCountryCode();
         removeVoiceSearch();
         changeLogoContent();
         removeButtonText();
