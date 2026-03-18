@@ -83,7 +83,7 @@
     }
 
     function removeButtonText() {
-        const buttons = document.querySelectorAll('.yt-spec-button-shape-next__button-text-content');
+        const buttons = document.querySelectorAll('#end .yt-spec-button-shape-next__button-text-content');
         buttons.forEach(button => {
             if (!button.dataset.removed) {
                 button.dataset.removed = 'true';
