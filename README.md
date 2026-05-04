@@ -37,7 +37,3 @@ Contributions are welcome! If you have improvements, new configuration files, or
 
 This project is licensed under the **Creative Commons Attribution 4.0 International License**.  
 See the [LICENSE](LICENSE) file for more details.
-
----
-
-*Happy Linuxing!* 🚀🐧
