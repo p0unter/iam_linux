@@ -5,6 +5,7 @@ local map = vim.keymap.set
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = false
 vim.opt.number = true
+
 vim.opt.guicursor = "a:block-Cursor"
 
 vim.opt.tabstop = 2
@@ -51,4 +52,6 @@ end, { desc = "Toggle transparent background" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+
+
 

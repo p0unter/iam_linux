@@ -30,11 +30,7 @@ vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
 
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
-    vim.api.nvim_set_hl(0, "Cursor", { fg = "#000814", bg = "#ffc300" })
-    vim.api.nvim_set_hl(0, "CursorIM", { fg = "#000814", bg = "#ffffff" })
-
     apply_transparent()
-
     setup_statusline()
   end,
 })
@@ -43,17 +39,5 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "NvimTree",
   callback = function()
     vim.opt_local.statusline = ""
-  end,
-})
-
-vim.api.nvim_create_autocmd("InsertEnter", {
-  callback = function()
-    vim.api.nvim_set_hl(0, "Cursor", { fg = "#000814", bg = "#ffffff" })
-  end,
-})
-
-vim.api.nvim_create_autocmd("InsertLeave", {
-  callback = function()
-    vim.api.nvim_set_hl(0, "Cursor", { fg = "#000814", bg = "#ffc300" })
   end,
 })

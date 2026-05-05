@@ -20,8 +20,11 @@ map("n", "<leader>tr", function()
     vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "NONE" })
     vim.notify("Transparent ON", vim.log.levels.INFO)
   else
-    -- NvChad way to reload highlights
     require("base46").load_all_highlights()
     vim.notify("Transparent OFF", vim.log.levels.INFO)
   end
 end, { desc = "Toggle transparent background" })
+
+map("i", "<C-Space>", function()
+  require("cmp").complete()
+end, { desc = "Trigger completion" })

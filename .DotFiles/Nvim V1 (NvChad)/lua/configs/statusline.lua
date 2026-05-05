@@ -2,8 +2,8 @@ local M = {}
 
 M.render = function()
   local mode_info = {
-    ["n"]  = { "- NORMAL", "St_NormalMode" },
-    ["i"]  = { "+ INSERT",   "St_InsertMode" },
+    ["n"]  = { "-", "St_NormalMode" },
+    ["i"]  = { "+",   "St_InsertMode" },
     ["v"]  = { "󰈈 VISUAL", "St_VisualMode" },
     ["V"]  = { "󰈈 V-LINE", "St_VisualMode" },
     [""]   = { "󰈈 V-BLOCK","St_VisualMode" },
