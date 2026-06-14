@@ -28,3 +28,4 @@ end, { desc = "Toggle transparent background" })
 map("i", "<C-Space>", function()
   require("cmp").complete()
 end, { desc = "Trigger completion" })
+

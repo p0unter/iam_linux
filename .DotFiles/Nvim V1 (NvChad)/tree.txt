@@ -1,0 +1,22 @@
+.
+├── init.lua
+├── lazy-lock.json
+├── lua
+│   ├── autocmds.lua
+│   ├── chadrc.lua
+│   ├── configs
+│   │   ├── conform.lua
+│   │   ├── lazy.lua
+│   │   ├── lspconfig.lua
+│   │   └── statusline.lua
+│   ├── mappings.lua
+│   ├── options.lua
+│   └── plugins
+│       ├── cmp.lua
+│       ├── init.lua
+│       ├── neoscroll.lua
+│       ├── smear_cursor.lua
+│       └── telescope.lua
+└── tree.txt
+
+4 directories, 16 files

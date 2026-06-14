@@ -12,6 +12,9 @@ M.base46 = {
     NvimTreeWinSeparator = { bg = "NONE" },
     StatusLine           = { bg = "NONE" },
     StatusLineNC         = { bg = "NONE" },
+
+    CursorLine   = { bg = "#1b1c21" },
+    CursorLineNr = { fg = "#ffffff" },
   },
 
   hl_add = {
@@ -38,6 +41,8 @@ M.base46 = {
     St_pos            = { bg = "NONE", fg = "#969896" },
     St_fname          = { bg = "NONE", fg = "#c5c8c6" },
     St_dir            = { bg = "NONE", fg = "#969896" },
+
+    NvimTreeOpenedFile = { bold = true },
   },
 }
 

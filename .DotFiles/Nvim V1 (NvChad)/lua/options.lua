@@ -16,6 +16,8 @@ vim.opt.smartindent = true
 
 vim.opt.laststatus = 3
 
+vim.opt.cursorline = true
+
 local transparent = false
 
 local function set_transparent()
@@ -52,6 +54,4 @@ end, { desc = "Toggle transparent background" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
-
-
 
