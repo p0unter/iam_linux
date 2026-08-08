@@ -58,6 +58,10 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
+        tabstop = 4, -- set tabs to 4 columns
+        softtabstop = 4, -- Tab key inserts 4 spaces
+        shiftwidth = 4, -- indentation width of 4 spaces
+        expandtab = true, -- convert tabs to spaces
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
